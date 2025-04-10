@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mwpozzk3j-java-springboot-gitops
+  description: This is GitOps manifest for mwpozzk3j-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=mwpozzk3j-java-springboot
+    backstage.io/kubernetes-id: mwpozzk3j-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: mwpozzk3j-java-springboot-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mwpozzk3j-java-springboot
